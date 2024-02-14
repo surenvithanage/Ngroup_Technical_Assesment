@@ -35,7 +35,7 @@
                 id="email" 
                 type="text" 
                 [(ngModel)]="store.email"
-                class="form-control">
+                class="form-control" readonly="true">
             <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
                 <div *ngIf="f.email.errors?.required">Email is required.</div>
             </div>
