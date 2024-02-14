@@ -26,6 +26,7 @@ Develop Admin Portal and Backend to manage CRUD for “Stores” as per image on
 - Configure JAVA_HOME in Environment Variables
 
 ## Build/Run instruction
+- Mongo db needs to be up and running in localhost port 27017
 - Open the Terminal / Command Prompt in project **Root Directory** and execute **mvn spring-boot:run**
 - Swagger can be accessed from **http://localhost:9090/swagger-ui.html#/** for testing all the endpoints
 
