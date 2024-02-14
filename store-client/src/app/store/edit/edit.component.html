@@ -1,0 +1,112 @@
+<div class="container">
+    <h2 class="t-20">Update Store Record</h2>
+  
+    <a href="#" routerLink="/store/index" class="btn btn-primary t-20 b-20">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="id">Id:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                [(ngModel)]="store.id"
+                class="form-control" readonly="true">
+        </div>
+  
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input 
+                formControlName="name"
+                id="name" 
+                type="text" 
+                [(ngModel)]="store.name"
+                class="form-control">
+            <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                <div *ngIf="f.name.errors?.required">Name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="text" 
+                [(ngModel)]="store.email"
+                class="form-control">
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors?.required">Email is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input 
+                formControlName="category"
+                id="category" 
+                type="text" 
+                [(ngModel)]="store.category"
+                class="form-control">
+            <div *ngIf="f.category.touched && f.category.invalid" class="alert alert-danger">
+                <div *ngIf="f.category.errors?.required">Category is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input 
+                formControlName="address"
+                id="address" 
+                type="text" 
+                [(ngModel)]="store.address"
+                class="form-control">
+            <div *ngIf="f.address.touched && f.address.invalid" class="alert alert-danger">
+                <div *ngIf="f.address.errors?.required">Address is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="geolocation">Geo Location:</label>
+            <input 
+                formControlName="geolocation"
+                id="geolocation" 
+                type="text" 
+                [(ngModel)]="store.geolocation"
+                class="form-control">
+            <div *ngIf="f.geolocation.touched && f.geolocation.invalid" class="alert alert-danger">
+                <div *ngIf="f.geolocation.errors?.required">Geo Location is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image URL:</label>
+            <input 
+                formControlName="image"
+                id="image" 
+                type="text" 
+                [(ngModel)]="store.image"
+                class="form-control">
+            <div *ngIf="f.image.touched && f.image.invalid" class="alert alert-danger">
+                <div *ngIf="f.image.errors?.required">Image URL is required.</div>
+            </div>
+        </div>
+         
+        <div class="form-group">
+            <label for="description">Descrption:</label>
+            <textarea 
+                formControlName="description"
+                id="description" 
+                type="text" 
+                [(ngModel)]="store.description"
+                class="form-control">
+            </textarea>
+            <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+                <div *ngIf="f.description.errors?.required">Description is required.</div>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>
