@@ -18,7 +18,7 @@ Using BeanIO, Develop a Java Program to generate FlatFile based on format below:
 ![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/file_generator/reports/Screenshot%202024-02-14%20at%2010.22.11%E2%80%AFPM.png)
 
 ## FlatFile
-![alt text]([https://github.com/surenvithanage/Drone-Management/blob/develop/screenshots/Swagger_ui.png?raw=true](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/file_generator/reports/Screenshot%202024-02-14%20at%2010.22.20%E2%80%AFPM.png))
+![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/file_generator/reports/Screenshot%202024-02-14%20at%2010.22.20%E2%80%AFPM.png)
 
 # Technical Assessment 2
 Develop Admin Portal and Backend to manage CRUD for “Stores” as per image on the left.
