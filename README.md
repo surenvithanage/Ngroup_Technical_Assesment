@@ -1,0 +1,1 @@
+![Model]([Paste_link_here](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/file_generator/reports/flatFile.txt)https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/file_generator/reports/flatFile.txt)
