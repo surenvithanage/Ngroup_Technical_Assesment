@@ -2,7 +2,7 @@
 Using BeanIO, Develop a Java Program to generate FlatFile based on format below: Tips: Use org.beanio.annotation.Field to annotate the length and position start & end
 
 ## Requirements
-- Java 1.8
+- Java 17
 - IDE ( IntelliJ IDEA )
 - Configure JAVA_HOME in Environment Variables
 
@@ -10,9 +10,6 @@ Using BeanIO, Develop a Java Program to generate FlatFile based on format below:
 - Open the Terminal / Command Prompt in project **Root Directory** and execute **mvn spring-boot:run**
 - Beanio flatfile report will be generated within the project directory itself
 - Jasper report will be created in the following path : /Users/surenvithanage/Projects/Interview
-- Swagger can be accessed from **http://localhost:8080/swagger-ui.html#/** for testing all the endpoints
-- Postman collection is also included in the root directory
-- Test cases can be executed using **mvn test**
 
 ## Jasper Report
 ![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/file_generator/reports/Screenshot%202024-02-14%20at%2010.22.11%E2%80%AFPM.png)
@@ -47,3 +44,8 @@ Develop Admin Portal and Backend to manage CRUD for “Stores” as per image on
 ### View Record
 
 ![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.19.55%E2%80%AFPM.png)
+
+### Swagger
+
+![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-service/document/Screenshot%202024-02-14%20at%2010.09.21%E2%80%AFPM.png)
+
