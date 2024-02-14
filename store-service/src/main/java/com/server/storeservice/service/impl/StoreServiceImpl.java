@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 import static com.server.storeservice.utility.varlist.CodeVarlist.*;
+import static com.server.storeservice.utility.varlist.MessageVarList.DUPLICATE_EMAIL_RECORD;
 import static com.server.storeservice.utility.varlist.MessageVarList.RECORD_NOT_FOUND;
 
 @Service
@@ -77,16 +78,25 @@ public class StoreServiceImpl implements StoreService {
         ResponseBean responseBean = new ResponseBean();
 
         try {
-            Store store = entityMapper.dtoToEntity(dto);
-            Store created = storeRepository.save(store);
+            Optional<Store> exists = storeRepository.findByEmail(dto.getEmail());
 
-            KeyValueBean<Store> kvBean = new KeyValueBean<>();
-            kvBean.setKey(STORE_INSERT);
-            kvBean.setValue(created);
-            responseBean.setRequestOk(true);
-            responseBean.setMessageType(SUCCESS);
+            if (exists.isEmpty()) {
+                Store store = entityMapper.dtoToEntity(dto);
 
-            responseBean.setData(kvBean);
+                Store created = storeRepository.save(store);
+
+                KeyValueBean<Store> kvBean = new KeyValueBean<>();
+                kvBean.setKey(STORE_INSERT);
+                kvBean.setValue(created);
+                responseBean.setRequestOk(true);
+                responseBean.setMessageType(SUCCESS);
+
+                responseBean.setData(kvBean);
+            } else {
+                responseBean.setRequestOk(false);
+                responseBean.setMessageType(ERROR);
+                responseBean.setMessage(DUPLICATE_EMAIL_RECORD);
+            }
 
         } catch (Exception e) {
             throw e;
@@ -106,7 +116,6 @@ public class StoreServiceImpl implements StoreService {
 
                 store.setName(dto.getName());
                 store.setGeolocation(dto.getGeolocation());
-                store.setEmail(dto.getEmail());
                 store.setDescription(dto.getDescription());
                 store.setAddress(dto.getAddress());
                 store.setImage(dto.getImage());
