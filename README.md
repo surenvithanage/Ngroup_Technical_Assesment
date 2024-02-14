@@ -34,16 +34,16 @@ Develop Admin Portal and Backend to manage CRUD for “Stores” as per image on
 
 ### Main listing
 
-![alt text]([https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.19.32%E2%80%AFPM.png])
+![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.19.32%E2%80%AFPM.png)
 
 ### Create Record
 
-![alt text]([https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.19.48%E2%80%AFPM.png])
+![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.19.48%E2%80%AFPM.png)
 
 ### Update Record
 
-![alt text]([https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.20.06%E2%80%AFPM.png])
+![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.20.06%E2%80%AFPM.png)
 
 ### View Record
 
-![alt text]([https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.19.55%E2%80%AFPM.png])
+![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.19.55%E2%80%AFPM.png)
