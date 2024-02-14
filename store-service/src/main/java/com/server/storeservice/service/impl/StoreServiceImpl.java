@@ -10,8 +10,10 @@ import com.server.storeservice.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import static com.server.storeservice.utility.varlist.CodeVarlist.STORE_INSERT;
-import static com.server.storeservice.utility.varlist.CodeVarlist.STORE_LIST;
+import java.util.Optional;
+
+import static com.server.storeservice.utility.varlist.CodeVarlist.*;
+import static com.server.storeservice.utility.varlist.MessageVarList.RECORD_NOT_FOUND;
 
 @Service
 public class StoreServiceImpl implements StoreService {
@@ -32,7 +34,37 @@ public class StoreServiceImpl implements StoreService {
             kvBean.setValue(storeRepository.findAll());
 
             responseBean.setRequestOk(true);
+            responseBean.setMessageType(SUCCESS);
+
             responseBean.setData(kvBean);
+        } catch (Exception e) {
+            throw e;
+        }
+
+        return responseBean;
+    }
+
+    @Override
+    public ResponseBean find(String id) {
+        ResponseBean responseBean = new ResponseBean();
+        KeyValueBean<Store> kvBean = new KeyValueBean<>();
+
+        try {
+            Optional<Store> optional = storeRepository.findById(id);
+            if (optional.isPresent()) {
+                Store store = optional.get();
+                kvBean.setKey(STORE_OBJECT);
+                kvBean.setValue(store);
+
+                responseBean.setRequestOk(true);
+                responseBean.setMessageType(SUCCESS);
+
+                responseBean.setData(kvBean);
+            } else {
+                responseBean.setRequestOk(false);
+                responseBean.setMessageType(ERROR);
+                responseBean.setMessage(RECORD_NOT_FOUND);
+            }
         } catch (Exception e) {
             throw e;
         }
@@ -52,10 +84,11 @@ public class StoreServiceImpl implements StoreService {
             kvBean.setKey(STORE_INSERT);
             kvBean.setValue(created);
             responseBean.setRequestOk(true);
+            responseBean.setMessageType(SUCCESS);
+
             responseBean.setData(kvBean);
 
         } catch (Exception e) {
-            System.out.println("Exception : " + e.getMessage());
             throw e;
         }
         return responseBean;
@@ -63,11 +96,70 @@ public class StoreServiceImpl implements StoreService {
 
     @Override
     public ResponseBean update(StoreDto dto) {
-        return null;
+        ResponseBean responseBean = new ResponseBean();
+        KeyValueBean<Store> kvBean = new KeyValueBean<>();
+
+        try {
+            Optional<Store> optional = storeRepository.findById(dto.getId());
+            if (optional.isPresent()) {
+                Store store = optional.get();
+
+                store.setName(dto.getName());
+                store.setGeolocation(dto.getGeolocation());
+                store.setEmail(dto.getEmail());
+                store.setDescription(dto.getDescription());
+                store.setAddress(dto.getAddress());
+                store.setImage(dto.getImage());
+                store.setCategory(dto.getCategory());
+
+                Store updated = storeRepository.save(store);
+
+                kvBean.setKey(STORE_UPDATE);
+                kvBean.setValue(updated);
+
+                responseBean.setRequestOk(true);
+                responseBean.setMessageType(SUCCESS);
+
+                responseBean.setData(kvBean);
+            } else {
+                responseBean.setRequestOk(false);
+                responseBean.setMessageType(ERROR);
+                responseBean.setMessage(RECORD_NOT_FOUND);
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+
+        return responseBean;
     }
 
     @Override
-    public ResponseBean delete(String email) {
-        return null;
+    public ResponseBean delete(String id) {
+        ResponseBean responseBean = new ResponseBean();
+        KeyValueBean<Store> kvBean = new KeyValueBean<>();
+
+        try {
+            Optional<Store> optional = storeRepository.findById(id);
+            if (optional.isPresent()) {
+                Store store = optional.get();
+                storeRepository.delete(store);
+
+                kvBean.setKey(STORE_DELETE);
+                kvBean.setValue(store);
+
+                responseBean.setRequestOk(true);
+                responseBean.setMessageType(SUCCESS);
+
+                responseBean.setData(kvBean);
+            } else {
+                responseBean.setRequestOk(false);
+                responseBean.setMessageType(ERROR);
+                responseBean.setMessage(RECORD_NOT_FOUND);
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+
+        return responseBean;
     }
 }

@@ -6,7 +6,8 @@ import com.server.storeservice.dto.StoreDto;
 public interface StoreService {
 
     ResponseBean list();
+    ResponseBean find(String id);
     ResponseBean insert(StoreDto dto);
     ResponseBean update(StoreDto dto);
-    ResponseBean delete(String email);
+    ResponseBean delete(String id);
 }

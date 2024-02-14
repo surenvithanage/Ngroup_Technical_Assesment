@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class StoreDto {
 
+    private String id;
+
     private String email;
 
     private String name;

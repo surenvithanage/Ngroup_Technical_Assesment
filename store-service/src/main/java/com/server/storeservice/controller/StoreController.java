@@ -26,9 +26,27 @@ public class StoreController {
         return common.getResponseEntityBean(responseBean);
     }
 
+    @GetMapping(value = "/find/{id}")
+    public ResponseEntity<ResponseBean> find(@PathVariable String id) {
+        ResponseBean responseBean = service.find(id);
+        return common.getResponseEntityBean(responseBean);
+    }
+
     @PostMapping(value = "/insert")
     public ResponseEntity<ResponseBean> insert(@Valid @RequestBody StoreDto requestDto) {
         ResponseBean responseBean = service.insert(requestDto);
+        return common.getResponseEntityBean(responseBean);
+    }
+
+    @PutMapping(value = "/update")
+    public ResponseEntity<ResponseBean> update(@Valid @RequestBody StoreDto requestDto) {
+        ResponseBean responseBean = service.update(requestDto);
+        return common.getResponseEntityBean(responseBean);
+    }
+
+    @DeleteMapping(value = "/delete/{id}")
+    public ResponseEntity<ResponseBean> delete(@PathVariable String id) {
+        ResponseBean responseBean = service.delete(id);
         return common.getResponseEntityBean(responseBean);
     }
 }
