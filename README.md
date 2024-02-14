@@ -7,7 +7,7 @@ Using BeanIO, Develop a Java Program to generate FlatFile based on format below:
 - Configure JAVA_HOME in Environment Variables
 
 ## Build/Run instruction
-- Open the Terminal / Command Prompt in project **Root Directory** and execute **mvn spring-boot:run**
+- Run the GenerateFlatFile class which call generateJasperReport for both html and pdf and also generateFlatFile method
 - Beanio flatfile report will be generated within the project directory itself
 - Jasper report will be created in the following path : /Users/surenvithanage/Projects/Interview
 
