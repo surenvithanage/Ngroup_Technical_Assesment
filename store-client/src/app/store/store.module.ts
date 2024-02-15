@@ -7,6 +7,8 @@ import { ViewComponent } from './view/view.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { FilterPipe } from '../filter.pipe';
 
 
 @NgModule({
@@ -14,13 +16,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IndexComponent,
     ViewComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
     StoreRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class StoreModule { }
