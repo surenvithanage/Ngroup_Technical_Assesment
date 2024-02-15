@@ -46,7 +46,19 @@ Develop Admin Portal and Backend to manage CRUD for “Stores” as per image on
 
 ![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-client/document/Screenshot%202024-02-14%20at%2010.19.55%E2%80%AFPM.png)
 
+### Search 
+
+![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/main/store-client/document/Screenshot%202024-02-15%20at%207.09.54%E2%80%AFPM.png)
+
+### Pagination
+
+![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/main/store-client/document/Screenshot%202024-02-15%20at%207.17.20%E2%80%AFPM.png)
+
+
 ### Swagger
 
 ![alt text](https://github.com/surenvithanage/Ngroup_Technical_Assesment/blob/feature/report-development/store-service/document/Screenshot%202024-02-14%20at%2010.09.21%E2%80%AFPM.png)
+
+
+Please note that both Search and Pagination functionalities is handled from the UI due to the lack of time.
 
