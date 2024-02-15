@@ -10,6 +10,8 @@ import { Store } from '../store';
 export class IndexComponent implements OnInit {
 
   stores: any = [];
+  searchText!: string;
+  p: number = 1;
 
   constructor(public storeService: StoreService) { }
 
